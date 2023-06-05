@@ -137,7 +137,7 @@ const createEnemy = (nameIs, healthIs, powerIs, staminaIs) => {
   
   const fireTome = new Tome('Merlin', 'Fire', 1);
   console.log(fireTome);
-  
+
   class Factory {
     constructor (maker) {
       this.maker = maker;
@@ -152,10 +152,14 @@ const createEnemy = (nameIs, healthIs, powerIs, staminaIs) => {
     }
   }
   
-  const merlin = new Factory('Merlin');
-  merlin.generateTome('Fire');
-  merlin.generateTome('Water');
-  merlin.generateTome('Earth');
-  merlin.generateTome('Air');
-  console.log(merlin);
-  console.log(merlin.findTome(0));
+  const merlin = new Factory('Merlin'); // Creates object named Merlin from Factory class
+
+//   merlin.generateTome('Fire'); //Object Merlin calls the inherited generateTome() with 'Fire' as the spelltype.
+//   // generateTome() creates a new object with class Tome and inputs "Merlin" as its maker, 'Firetype' as spelltype, 
+//   // as well as a serialNum designated by the current length of the tomes array created in the constructor method. The method finishes by pushing a value into the above array.
+//   merlin.generateTome('Water'); // ^ //
+//   merlin.generateTome('Earth'); // ^ //
+//   merlin.generateTome('Air'); // ^ //
+
+  console.log(merlin); // Shows Factory object with constructor (maker) showing merlin, and the tomes array and its contents
+  console.log(merlin.findTome(0)); //Reaches into the object and calls the method findTome(0) which will return the first value of the tomes array.
